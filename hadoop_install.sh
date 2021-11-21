@@ -53,7 +53,7 @@ sudo apt install openssh-server openssh-client -y
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 0600 ~/.ssh/authorized_keys
-#ssh localhost
+ssh localhost
 
 #Download hadoop3.3.1 from apache
 sudo wget https://downloads.apache.org/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz  
@@ -162,4 +162,11 @@ echo '<configuration>
 #sudo ls /hadoopdir/hadoop-3.2.1/
 
 
+hdfs namenode -format
+
+sudo ls /hadoopdir/hadoop-3.2.1/sbin
+
+./start-dfs.sh
+
+./start-yarn.sh
 
